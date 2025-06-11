@@ -22,7 +22,7 @@ export class AlphaVantageClient {
     url.searchParams.append('apikey', this.apiKey);
     const res = await fetch(url.toString());
     if (!res.ok) throw new Error(`Network error: ${res.status}`);
-    const data = await res.json();
+    const data = await res.json() as any;
     if (data['Error Message'] || data['Note'] || data['Information']) {
       throw new Error(data['Error Message'] || data['Note'] || data['Information']);
     }

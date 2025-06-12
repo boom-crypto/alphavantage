@@ -14,7 +14,7 @@ export class Forex {
   constructor(private client: AlphaVantageClient) {}
 
   /**
-   * Returns intraday time series for any digital currency (e.g., BTC) traded on a specific market (e.g., CNY/Chinese Yuan), refreshed every 5 minutes.
+   * Returns intraday time series for any currency exchange rate pair, refreshed every 5 minutes.
    * 
    * @param params - Parameters including from_symbol, to_symbol, and interval
    * @returns Promise resolving to forex intraday time series data

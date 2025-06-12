@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Util } from 'alphavantage-api';
+import { Util } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const SymbolSearchParamsSchema = z.object({

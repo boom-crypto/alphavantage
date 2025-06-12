@@ -4,7 +4,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
-import { AlphaVantage } from 'alphavantage-api';
+import { AlphaVantage } from '@gviper/alphavantage-api';
 
 import { createStocksTools } from './tools/stocks.js';
 import { createForexTools } from './tools/forex.js';

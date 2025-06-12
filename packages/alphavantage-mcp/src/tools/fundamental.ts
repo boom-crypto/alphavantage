@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Fundamental } from 'alphavantage-api';
+import { Fundamental } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const CompanyOverviewParamsSchema = z.object({

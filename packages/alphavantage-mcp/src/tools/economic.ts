@@ -1,14 +1,14 @@
 import { z } from 'zod';
-import { Economic } from 'alphavantage-api';
+import { Economic } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const EconomicIndicatorParamsSchema = z.object({
-  interval: z.enum(['daily', 'weekly', 'monthly', 'quarterly', 'annual']).optional().describe('Time interval between two consecutive data points'),
+  interval: z.enum(['annual', 'quarterly', 'monthly']).optional().describe('Time interval between two consecutive data points'),
   datatype: z.enum(['json', 'csv']).optional().describe('By default, datatype=json'),
 });
 
 const TreasuryYieldParamsSchema = z.object({
-  interval: z.enum(['daily', 'weekly', 'monthly']).optional().describe('Time interval between two consecutive data points'),
+  interval: z.enum(['annual', 'quarterly', 'monthly']).optional().describe('Time interval between two consecutive data points'),
   maturity: z.enum(['3month', '2year', '5year', '7year', '10year', '30year']).optional().describe('By default, maturity=10year'),
   datatype: z.enum(['json', 'csv']).optional().describe('By default, datatype=json'),
 });

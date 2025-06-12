@@ -7,8 +7,8 @@
 ```
 .
 ├── packages/
-│   ├── alphavantage-api/   # 封装 alphavantage.co 全部 API 协议的 TypeScript 包
-│   └── alphavantage-mcp/   # 基于 alphavantage-api 的 mcp 工具包
+│   ├── alphavantage-api/   # 封装 alphavantage.co 全部 API 协议的 TypeScript 包 (@gviper/alphavantage-api)
+│   └── alphavantage-mcp/   # 基于 alphavantage-api 的 mcp 工具包 (@gviper/alphavantage-mcp)
 ├── pnpm-workspace.yaml     # pnpm 工作区配置
 ├── package.json            # 根依赖与 workspace 配置
 └── ...
@@ -16,10 +16,10 @@
 
 ## 各包说明
 
-- **alphavantage-api**：
+- **@gviper/alphavantage-api**：
   - 封装 [alphavantage.co](https://www.alphavantage.co/documentation/#) 所有 API 协议，类型安全，严格模式。
-- **alphavantage-mcp**：
-  - 基于 `alphavantage-api` 的业务工具包。
+- **@gviper/alphavantage-mcp**：
+  - 基于 `@gviper/alphavantage-api` 的 MCP (Model Context Protocol) 工具包。
 
 ## 开发依赖
 - pnpm

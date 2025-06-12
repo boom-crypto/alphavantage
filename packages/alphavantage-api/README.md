@@ -1,4 +1,4 @@
-# alphavantage-api
+# @gviper/alphavantage-api
 
 TypeScript 严格模式下的 Alpha Vantage API 全量封装。
 
@@ -22,7 +22,7 @@ import {
   Options,
   Commodities,
   Intelligence
-} from 'alphavantage-api';
+} from '@gviper/alphavantage-api';
 
 const client = new AlphaVantageClient({ apiKey: 'YOUR_KEY' });
 const stocks = new Stocks(client);

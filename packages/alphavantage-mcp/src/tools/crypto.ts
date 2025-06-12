@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Crypto } from 'alphavantage-api';
+import { Crypto } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const CryptoIntradayParamsSchema = z.object({

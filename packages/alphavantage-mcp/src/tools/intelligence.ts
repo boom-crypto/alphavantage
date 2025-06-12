@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Intelligence } from 'alphavantage-api';
+import { Intelligence } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const NewsSentimentParamsSchema = z.object({
@@ -7,14 +7,14 @@ const NewsSentimentParamsSchema = z.object({
   topics: z.string().optional().describe('News topics of your choice (comma-separated)'),
   time_from: z.string().optional().describe('The time range of the news sentiment (format: YYYYMMDDTHHMM)'),
   time_to: z.string().optional().describe('The time range of the news sentiment (format: YYYYMMDDTHHMM)'),
-  sort: z.enum(['LATEST', 'EARLIEST', 'RELEVANCE']).optional().describe('By default, sort=LATEST'),
+  sort: z.enum(['LATEST', 'EARLIEST']).optional().describe('By default, sort=LATEST'),
   limit: z.number().int().min(1).max(1000).optional().describe('By default, limit=50'),
 });
 
 const EarningsCallTranscriptParamsSchema = z.object({
   symbol: z.string().describe('The symbol of the company of your choice'),
-  year: z.string().describe('The fiscal year of the earnings call'),
-  quarter: z.string().describe('The fiscal quarter of the earnings call'),
+  year: z.number().describe('The fiscal year of the earnings call'),
+  quarter: z.number().describe('The fiscal quarter of the earnings call'),
 });
 
 export function createIntelligenceTools(intelligence: Intelligence) {

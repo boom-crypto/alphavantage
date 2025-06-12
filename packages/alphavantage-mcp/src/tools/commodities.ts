@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Commodities } from 'alphavantage-api';
+import { Commodities } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const CommodityParamsSchema = z.object({

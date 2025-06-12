@@ -1,5 +1,5 @@
 {
-  "name": "alphavantage-api",
+  "name": "@gviper/alphavantage-api",
   "version": "1.0.0",
   "description": "TypeScript SDK for Alpha Vantage API with comprehensive type safety and all endpoint support",
   "main": "dist/index.js",

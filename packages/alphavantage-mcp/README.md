@@ -17,7 +17,7 @@ A Model Context Protocol (MCP) server that provides access to Alpha Vantage fina
 ## Installation
 
 ```bash
-npm install alphavantage-mcp
+npm install @gviper/alphavantage-mcp
 ```
 
 ## Configuration
@@ -35,7 +35,7 @@ Get your free API key from [Alpha Vantage](https://www.alphavantage.co/support/#
 ### As a standalone MCP server
 
 ```bash
-npx alphavantage-mcp
+npx @gviper/alphavantage-mcp
 ```
 
 ### In your MCP client configuration
@@ -47,7 +47,7 @@ Add to your MCP client configuration:
   "mcpServers": {
     "alphavantage": {
       "command": "npx",
-      "args": ["alphavantage-mcp"],
+      "args": ["@gviper/alphavantage-mcp"],
       "env": {
         "ALPHAVANTAGE_API_KEY": "your_api_key_here"
       }

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Stocks } from 'alphavantage-api';
+import { Stocks } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const IntradayParamsSchema = z.object({

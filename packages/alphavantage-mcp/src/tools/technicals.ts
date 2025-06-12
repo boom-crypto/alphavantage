@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Technicals } from 'alphavantage-api';
+import { Technicals } from '@gviper/alphavantage-api';
 
 // Base schema for most technical indicators
 const TechnicalIndicatorBaseSchema = z.object({

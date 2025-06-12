@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { Forex } from 'alphavantage-api';
+import { Forex } from '@gviper/alphavantage-api';
 
 // Zod schemas for validation
 const ForexIntradayParamsSchema = z.object({

@@ -1,35 +1,54 @@
-# alphavantage Monorepo
+# 📈 Alpha Vantage TypeScript Monorepo
 
-本项目为基于 [alphavantage.co API](https://www.alphavantage.co/documentation/#) 的 TypeScript 多包管理（monorepo）项目，使用 pnpm 进行多包管理，严格启用 TypeScript 严格模式。
+A comprehensive TypeScript monorepo built around the [Alpha Vantage API](https://www.alphavantage.co/documentation/#), featuring type-safe financial data access with strict TypeScript implementation and pnpm workspace management.
 
-## 目录结构
+## 🏗️ Project Structure
 
 ```
 .
 ├── packages/
-│   ├── alphavantage-api/   # 封装 alphavantage.co 全部 API 协议的 TypeScript 包 (@gviper/alphavantage-api)
-│   └── alphavantage-mcp/   # 基于 alphavantage-api 的 mcp 工具包 (@gviper/alphavantage-mcp)
-├── pnpm-workspace.yaml     # pnpm 工作区配置
-├── package.json            # 根依赖与 workspace 配置
+│   ├── alphavantage-api/     # Core TypeScript SDK (@gviper/alphavantage-api)
+│   └── alphavantage-mcp/     # MCP tools package (@gviper/alphavantage-mcp)
+├── pnpm-workspace.yaml       # pnpm workspace configuration
+├── package.json              # Root dependencies & workspace config
 └── ...
 ```
 
-## 各包说明
+## 📦 Packages
 
-- **@gviper/alphavantage-api**：
-  - 封装 [alphavantage.co](https://www.alphavantage.co/documentation/#) 所有 API 协议，类型安全，严格模式。
-- **@gviper/alphavantage-mcp**：
-  - 基于 `@gviper/alphavantage-api` 的 MCP (Model Context Protocol) 工具包。
+### 🔧 @gviper/alphavantage-api
+Complete TypeScript wrapper for all [Alpha Vantage API](https://www.alphavantage.co/documentation/#) endpoints with full type safety and strict mode compliance.
 
-## 开发依赖
-- pnpm
-- typescript（严格模式）
-- eslint, prettier
-- jest, ts-jest, @types/jest
-- turbo, ts-node, rimraf
+### 🛠️ @gviper/alphavantage-mcp  
+Model Context Protocol (MCP) tools built on top of the core `@gviper/alphavantage-api` package.
 
-## 初始化步骤
-1. `pnpm install` 安装依赖
-2. 各包下已启用 TypeScript 严格模式
+## 🚀 Quick Start
+
+```bash
+# Install all dependencies
+pnpm install
+
+# Work with specific packages
+cd packages/alphavantage-api
+cd packages/alphavantage-mcp
+```
+
+## 🔧 Development Stack
+
+- **Package Manager**: pnpm with workspaces
+- **Language**: TypeScript (strict mode enabled)
+- **Code Quality**: ESLint, Prettier
+- **Testing**: Jest, ts-jest, @types/jest
+- **Build Tools**: Turbo, ts-node, rimraf
+
+## ⚡ Features
+
+- ✅ **Type Safety**: Full TypeScript coverage with strict mode
+- ✅ **Complete API Coverage**: All Alpha Vantage endpoints supported
+- ✅ **Workspace Management**: Efficient pnpm monorepo setup
+- ✅ **Modern Tooling**: Latest development tools and practices
+- ✅ **MCP Integration**: Ready-to-use Model Context Protocol tools
 
 ---
+
+*Built with ❤️ for the financial data community*

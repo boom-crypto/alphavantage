@@ -7,7 +7,7 @@ const SymbolSearchParamsSchema = z.object({
   datatype: z.enum(['json', 'csv']).optional().describe('By default, datatype=json'),
 });
 
-const MarketStatusParamsSchema = z.object({}).optional();
+const MarketStatusParamsSchema = z.object({});
 
 export function createUtilTools(util: Util) {
   return {
@@ -22,7 +22,7 @@ export function createUtilTools(util: Util) {
     'av_util_market_status': {
       description: 'Get current market status (open vs. closed) of major trading venues worldwide',
       inputSchema: MarketStatusParamsSchema,
-      handler: async (params: any = {}) => {
+      handler: async (params: {} = {}) => {
         return await util.marketStatus(params);
       },
     },

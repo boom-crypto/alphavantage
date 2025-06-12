@@ -31,7 +31,7 @@ export class Intelligence {
    * 
    * @param params - Parameters including symbol, year, and quarter
    * @returns Promise resolving to earnings call transcript data
-   * @example https://www.alphavantage.co/query?function=EARNINGS_CALL_TRANSCRIPT&symbol=IBM&year=2022&quarter=3&apikey=demo
+   * @example https://www.alphavantage.co/query?function=EARNINGS_CALL_TRANSCRIPT&symbol=IBM&quarter=2024Q1&apikey=demo
    */
   async earningsCallTranscript(params: EarningsCallTranscriptParams): Promise<EarningsCallTranscriptResponse> {
     return this.client.request({

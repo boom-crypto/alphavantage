@@ -35,7 +35,9 @@
   "homepage": "https://github.com/your-username/alphavantage/tree/main/packages/alphavantage-api#readme",
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "axios": "^1.9.0",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

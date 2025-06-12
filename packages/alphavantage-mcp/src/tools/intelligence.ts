@@ -37,8 +37,8 @@ export function createIntelligenceTools(intelligence: Intelligence) {
 
     'av_intelligence_top_gainers_losers': {
       description: 'Get the top 20 gainers, losers, and most actively traded tickers in the US market',
-      inputSchema: z.object({}).optional(),
-      handler: async (params: any = {}) => {
+      inputSchema: z.object({}),
+      handler: async (params: {} = {}) => {
         return await intelligence.topGainersLosers(params);
       },
     },

@@ -1,15 +1,28 @@
-# @gviper/alphavantage-api
+# 📊 @gviper/alphavantage-api
 
-TypeScript 严格模式下的 Alpha Vantage API 全量封装。
+A comprehensive TypeScript SDK for the Alpha Vantage API with full type safety and strict mode compliance.
 
-- 覆盖官方全部API协议（股票、外汇、加密、技术指标、基本面、经济指标、工具类等）
-- 类型安全，参数、返回值、错误处理全类型化
-- 支持所有可选参数，默认值与官方一致
-- 支持API Key配置与复用
+## ✨ Features
 
-## 用法
+- 🎯 **Complete API Coverage**: All official Alpha Vantage endpoints (stocks, forex, crypto, technical indicators, fundamentals, economic data, utilities, options, commodities, market intelligence)
+- 🔒 **Type Safety**: Fully typed parameters, return values, and error handling
+- ⚙️ **Flexible Configuration**: Support for all optional parameters with official defaults
+- 🔑 **API Key Management**: Built-in API key configuration and reuse
+- 🚀 **Modern TypeScript**: Strict mode enabled for enhanced reliability
 
-```ts
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+npm install @gviper/alphavantage-api
+# or
+pnpm add @gviper/alphavantage-api
+```
+
+### Basic Usage
+
+```typescript
 import {
   AlphaVantageClient,
   Stocks,
@@ -24,7 +37,10 @@ import {
   Intelligence
 } from '@gviper/alphavantage-api';
 
-const client = new AlphaVantageClient({ apiKey: 'YOUR_KEY' });
+// Initialize client with your API key
+const client = new AlphaVantageClient({ apiKey: 'YOUR_API_KEY' });
+
+// Initialize endpoint modules
 const stocks = new Stocks(client);
 const forex = new Forex(client);
 const crypto = new Crypto(client);
@@ -35,15 +51,85 @@ const util = new Util(client);
 const options = new Options(client);
 const commodities = new Commodities(client);
 const intelligence = new Intelligence(client);
+```
 
-stocks.intraday({ symbol: 'IBM', interval: '5min' }).then(console.log);
-forex.exchangeRate({ from_currency: 'USD', to_currency: 'JPY' }).then(console.log);
-crypto.daily({ symbol: 'BTC', market: 'USD' }).then(console.log);
-technicals.sma({ symbol: 'IBM', interval: 'daily', time_period: 20, series_type: 'close' }).then(console.log);
-fundamental.companyOverview({ symbol: 'IBM' }).then(console.log);
-economic.cpi().then(console.log);
-util.symbolSearch({ keywords: 'Tesla' }).then(console.log);
-options.realtime({ symbol: 'AAPL' }).then(console.log);
-commodities.crudeOilWTI().then(console.log);
-intelligence.newsSentiment({ tickers: 'AAPL' }).then(console.log);
-``` 
+## 📖 Usage Examples
+
+### Stock Data
+```typescript
+// Get intraday stock data
+const intradayData = await stocks.intraday({ 
+  symbol: 'IBM', 
+  interval: '5min' 
+});
+
+// Get company overview
+const companyInfo = await fundamental.companyOverview({ 
+  symbol: 'IBM' 
+});
+```
+
+### Forex & Crypto
+```typescript
+// Get exchange rate
+const exchangeRate = await forex.exchangeRate({ 
+  from_currency: 'USD', 
+  to_currency: 'JPY' 
+});
+
+// Get daily crypto data
+const cryptoData = await crypto.daily({ 
+  symbol: 'BTC', 
+  market: 'USD' 
+});
+```
+
+### Technical Analysis
+```typescript
+// Simple Moving Average
+const smaData = await technicals.sma({ 
+  symbol: 'IBM', 
+  interval: 'daily', 
+  time_period: 20, 
+  series_type: 'close' 
+});
+```
+
+### Economic Data
+```typescript
+// Consumer Price Index
+const cpiData = await economic.cpi();
+
+// Symbol search
+const searchResults = await util.symbolSearch({ 
+  keywords: 'Tesla' 
+});
+```
+
+### Advanced Features
+```typescript
+// Options data
+const optionsData = await options.realtime({ 
+  symbol: 'AAPL' 
+});
+
+// Commodities
+const oilPrices = await commodities.crudeOilWTI();
+
+// Market intelligence
+const sentiment = await intelligence.newsSentiment({ 
+  tickers: 'AAPL' 
+});
+```
+
+## 🔧 API Reference
+
+All endpoint modules follow the same pattern and provide full TypeScript intellisense support. Refer to the [Alpha Vantage API documentation](https://www.alphavantage.co/documentation/) for detailed parameter descriptions.
+
+## 🤝 Contributing
+
+This package is part of a monorepo. Please refer to the root README for development guidelines.
+
+## 📄 License
+
+MIT License - see the LICENSE file for details. 

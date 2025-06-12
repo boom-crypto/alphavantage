@@ -1,21 +1,51 @@
 {
   "name": "alphavantage-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "TypeScript SDK for Alpha Vantage API with comprehensive type safety and all endpoint support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "alphavantage",
+    "api",
+    "stocks",
+    "forex",
+    "crypto",
+    "technical-indicators",
+    "financial-data",
+    "typescript",
+    "sdk"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/alphavantage.git",
+    "directory": "packages/alphavantage-api"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/alphavantage/issues"
+  },
+  "homepage": "https://github.com/your-username/alphavantage/tree/main/packages/alphavantage-api#readme",
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
-    "typescript": "^5.8.3",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

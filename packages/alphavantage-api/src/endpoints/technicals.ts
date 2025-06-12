@@ -15,6 +15,13 @@ import {
 export class Technicals {
   constructor(private client: AlphaVantageClient) {}
 
+  /**
+   * Returns the simple moving average (SMA) values for the specified symbol and time period.
+   * 
+   * @param params - Parameters including symbol, interval, time_period, and series_type
+   * @returns Promise resolving to SMA indicator data
+   * @example https://www.alphavantage.co/query?function=SMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo
+   */
   async sma(params: SMAParams): Promise<SingleValueIndicatorResponse> {
     return this.client.request({
       function: 'SMA',
@@ -22,6 +29,13 @@ export class Technicals {
     });
   }
 
+  /**
+   * Returns the exponential moving average (EMA) values for the specified symbol and time period.
+   * 
+   * @param params - Parameters including symbol, interval, time_period, and series_type
+   * @returns Promise resolving to EMA indicator data
+   * @example https://www.alphavantage.co/query?function=EMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo
+   */
   async ema(params: EMAParams): Promise<SingleValueIndicatorResponse> {
     return this.client.request({
       function: 'EMA',
@@ -29,6 +43,13 @@ export class Technicals {
     });
   }
 
+  /**
+   * Returns the weighted moving average (WMA) values for the specified symbol and time period.
+   * 
+   * @param params - Parameters including symbol, interval, time_period, and series_type
+   * @returns Promise resolving to WMA indicator data
+   * @example https://www.alphavantage.co/query?function=WMA&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo
+   */
   async wma(params: WMAParams): Promise<SingleValueIndicatorResponse> {
     return this.client.request({
       function: 'WMA',
@@ -60,22 +81,57 @@ export class Technicals {
     return this.client.request({ function: 'T3', ...params });
   }
 
+  /**
+   * Returns the moving average convergence / divergence (MACD) values for the specified symbol.
+   * 
+   * @param params - Parameters including symbol, interval, and series_type
+   * @returns Promise resolving to MACD indicator data
+   * @example https://www.alphavantage.co/query?function=MACD&symbol=IBM&interval=daily&series_type=open&apikey=demo
+   */
   async macd(params: MACDParams): Promise<MACDResponse> {
     return this.client.request({ function: 'MACD', ...params });
   }
 
+  /**
+   * Returns the moving average convergence / divergence (MACD) values with controllable moving average type.
+   * 
+   * @param params - Parameters including symbol, interval, series_type, and moving average types
+   * @returns Promise resolving to MACD extended indicator data
+   * @example https://www.alphavantage.co/query?function=MACDEXT&symbol=IBM&interval=daily&series_type=open&apikey=demo
+   */
   async macdext(params: MACDEXTParams): Promise<MACDResponse> {
     return this.client.request({ function: 'MACDEXT', ...params });
   }
 
+  /**
+   * Returns the stochastic oscillator values for the specified symbol.
+   * 
+   * @param params - Parameters including symbol, interval, and time periods
+   * @returns Promise resolving to stochastic oscillator data
+   * @example https://www.alphavantage.co/query?function=STOCH&symbol=IBM&interval=daily&apikey=demo
+   */
   async stoch(params: STOCHParams): Promise<STOCHResponse> {
     return this.client.request({ function: 'STOCH', ...params });
   }
 
+  /**
+   * Returns the stochastic fast oscillator values for the specified symbol.
+   * 
+   * @param params - Parameters including symbol, interval, and time periods
+   * @returns Promise resolving to stochastic fast oscillator data
+   * @example https://www.alphavantage.co/query?function=STOCHF&symbol=IBM&interval=daily&apikey=demo
+   */
   async stochf(params: STOCHFParams): Promise<STOCHResponse> {
     return this.client.request({ function: 'STOCHF', ...params });
   }
 
+  /**
+   * Returns the relative strength index (RSI) values for the specified symbol.
+   * 
+   * @param params - Parameters including symbol, interval, time_period, and series_type
+   * @returns Promise resolving to RSI indicator data
+   * @example https://www.alphavantage.co/query?function=RSI&symbol=IBM&interval=weekly&time_period=10&series_type=open&apikey=demo
+   */
   async rsi(params: RSIParams): Promise<SingleValueIndicatorResponse> {
     return this.client.request({ function: 'RSI', ...params });
   }
@@ -168,6 +224,13 @@ export class Technicals {
     return this.client.request({ function: 'PLUS_DM', ...params });
   }
 
+  /**
+   * Returns the Bollinger bands (BBANDS) values for the specified symbol.
+   * 
+   * @param params - Parameters including symbol, interval, time_period, series_type, and optional deviation
+   * @returns Promise resolving to Bollinger bands data
+   * @example https://www.alphavantage.co/query?function=BBANDS&symbol=IBM&interval=weekly&time_period=5&series_type=close&nbdevup=2&nbdevdn=2&apikey=demo
+   */
   async bbands(params: BBANDSParams): Promise<BBANDSResponse> {
     return this.client.request({ function: 'BBANDS', ...params });
   }

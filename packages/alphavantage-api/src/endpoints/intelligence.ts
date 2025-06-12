@@ -43,11 +43,11 @@ export class Intelligence {
   /**
    * Returns the top 20 gainers, losers, and most actively traded tickers in the US market.
    * 
-   * @param params - Parameters for top gainers/losers data
+   * @param params - Parameters for top gainers/losers data (optional)
    * @returns Promise resolving to top gainers/losers data
    * @example https://www.alphavantage.co/query?function=TOP_GAINERS_LOSERS&apikey=demo
    */
-  async topGainersLosers(params: NewsSentimentParams): Promise<TopGainersLosersResponse> {
+  async topGainersLosers(params: NewsSentimentParams = {}): Promise<TopGainersLosersResponse> {
     return this.client.request({ function: 'TOP_GAINERS_LOSERS', ...params });
   }
 

@@ -1,20 +1,43 @@
 {
   "name": "alphavantage-mcp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "MCP (Model Context Protocol) server for Alpha Vantage financial data API",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "alphavantage-mcp": "./dist/index.js"
+  },
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm run start",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "alphavantage",
+    "financial-data",
+    "stocks",
+    "forex",
+    "crypto",
+    "typescript"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
-    "typescript": "^5.8.3",
-    "alphavantage-api": "*"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "alphavantage-api": "*",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

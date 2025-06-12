@@ -30,7 +30,7 @@
   "packageManager": "pnpm@10.11.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "@gviper/alphavantage-api": "workspace:*",
+    "@gviper/alphavantage-api": "^1.0.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

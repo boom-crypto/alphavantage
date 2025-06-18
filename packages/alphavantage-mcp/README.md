@@ -1,46 +1,55 @@
-# Alpha Vantage MCP Server
+# 🔌 Alpha Vantage MCP Server
 
-A Model Context Protocol (MCP) server that provides access to Alpha Vantage financial data API. This server exposes Alpha Vantage's comprehensive financial data through MCP tools, making it easy to integrate financial data into AI applications.
+[![npm version](https://img.shields.io/npm/v/@gviper/alphavantage-mcp?style=flat-square)](https://www.npmjs.com/package/@gviper/alphavantage-mcp)
+[![MCP](https://img.shields.io/badge/MCP-Compatible-blue?style=flat-square)](https://modelcontextprotocol.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
 
-## Features
+> ⚠️ **IMPORTANT NOTICE**: This MCP server was generated using Claude Code AI. While most functionality has been verified, please thoroughly test all MCP tools in your specific environment before production deployment. Users should validate data accuracy and server stability according to their requirements.
 
-- **Stock Data**: Real-time and historical stock data (intraday, daily, weekly, monthly)
-- **Forex Data**: Currency exchange rates and forex time series
-- **Cryptocurrency Data**: Digital currency prices and historical data
-- **Technical Indicators**: 70+ technical analysis indicators (SMA, EMA, MACD, RSI, Bollinger Bands, etc.)
-- **Fundamental Analysis**: Company overviews, financial statements, earnings data
-- **Economic Indicators**: GDP, inflation, unemployment, treasury yields, etc.
-- **Commodities**: Crude oil, natural gas, precious metals, agricultural products
-- **Market Intelligence**: News sentiment, earnings transcripts, insider transactions
-- **Utilities**: Symbol search, market status
+A professional Model Context Protocol (MCP) server providing seamless access to Alpha Vantage's comprehensive financial data API. Designed for AI applications requiring real-time market data, technical analysis, and financial intelligence.
 
-## Installation
+## 🌟 Key Features
+
+- **📊 Complete Market Coverage** — 80+ financial data endpoints in one MCP server
+- **🔌 Plug & Play** — Instant integration with any MCP-compatible AI system
+- **⚡ Real-time Data** — Live stock prices, forex rates, and market intelligence
+- **🔍 Technical Analysis** — 70+ indicators including MACD, RSI, Bollinger Bands
+- **🏢 Fundamental Data** — Company financials, earnings, and economic indicators
+- **🛡️ Enterprise Ready** — Robust error handling and rate limit management
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
+# npm
 npm install @gviper/alphavantage-mcp
+
+# pnpm  
+pnpm add @gviper/alphavantage-mcp
+
+# yarn
+yarn add @gviper/alphavantage-mcp
 ```
 
-## Configuration
+### Setup & Configuration
 
-Set your Alpha Vantage API key as an environment variable:
+1. **Get your API key** from [Alpha Vantage](https://www.alphavantage.co/support/#api-key) (free tier available)
 
-```bash
-export ALPHAVANTAGE_API_KEY="your_api_key_here"
-```
+2. **Set environment variable**:
+   ```bash
+   export ALPHAVANTAGE_API_KEY="your_api_key_here"
+   ```
 
-Get your free API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key).
+3. **Choose your deployment method**:
 
-## Usage
-
-### As a standalone MCP server
-
+#### Option A: Standalone Server
 ```bash
 npx @gviper/alphavantage-mcp
 ```
 
-### In your MCP client configuration
-
-Add to your MCP client configuration:
+#### Option B: MCP Client Integration
+Add to your MCP client configuration (e.g., Claude Desktop):
 
 ```json
 {
@@ -56,105 +65,93 @@ Add to your MCP client configuration:
 }
 ```
 
-## Available Tools
+## 🛠️ Available MCP Tools
 
-### Stock Data Tools
+### 📊 Stock Market Data
+| Tool | Description |
+|------|-------------|
+| `av_stocks_intraday` | Real-time intraday stock prices |
+| `av_stocks_daily` | Daily stock data with OHLC values |
+| `av_stocks_daily_adjusted` | Daily adjusted stock data |
+| `av_stocks_weekly` | Weekly stock data |
+| `av_stocks_monthly` | Monthly stock data |
+| `av_stocks_quote` | Latest stock quote |
+| `av_stocks_search` | Search stocks by keywords |
 
-- `av_stocks_intraday` - Get intraday stock data
-- `av_stocks_daily` - Get daily stock data
-- `av_stocks_daily_adjusted` - Get daily adjusted stock data
-- `av_stocks_weekly` - Get weekly stock data
-- `av_stocks_weekly_adjusted` - Get weekly adjusted stock data
-- `av_stocks_monthly` - Get monthly stock data
-- `av_stocks_monthly_adjusted` - Get monthly adjusted stock data
-- `av_stocks_quote` - Get latest stock quote
-- `av_stocks_search` - Search for stocks by keywords
+### 💱 Foreign Exchange
+| Tool | Description |
+|------|-------------|
+| `av_forex_intraday` | Intraday forex data |
+| `av_forex_daily` | Daily forex data |
+| `av_forex_exchange_rate` | Real-time exchange rates |
 
-### Forex Tools
+### ₿ Cryptocurrency
+| Tool | Description |
+|------|-------------|
+| `av_crypto_intraday` | Intraday crypto data |
+| `av_crypto_daily` | Daily crypto data |
+| `av_crypto_weekly` | Weekly crypto data |
 
-- `av_forex_intraday` - Get intraday forex data
-- `av_forex_daily` - Get daily forex data
-- `av_forex_weekly` - Get weekly forex data
-- `av_forex_monthly` - Get monthly forex data
-- `av_forex_exchange_rate` - Get real-time exchange rates
+### 📈 Technical Analysis (20+ Indicators)
+| Tool | Description |
+|------|-------------|
+| `av_technical_sma` | Simple Moving Average |
+| `av_technical_ema` | Exponential Moving Average |
+| `av_technical_macd` | MACD indicator |
+| `av_technical_rsi` | Relative Strength Index |
+| `av_technical_bbands` | Bollinger Bands |
+| `av_technical_stoch` | Stochastic Oscillator |
+| `av_technical_adx` | Average Directional Index |
 
-### Cryptocurrency Tools
+### 🏢 Fundamental Analysis
+| Tool | Description |
+|------|-------------|
+| `av_fundamental_company_overview` | Company overview & key metrics |
+| `av_fundamental_income_statement` | Income statements |
+| `av_fundamental_balance_sheet` | Balance sheets |
+| `av_fundamental_cash_flow` | Cash flow statements |
+| `av_fundamental_earnings` | Earnings data |
+| `av_fundamental_earnings_calendar` | Upcoming earnings |
+| `av_fundamental_ipo_calendar` | Upcoming IPOs |
+| `av_fundamental_dividend_calendar` | Upcoming dividends |
 
-- `av_crypto_intraday` - Get intraday crypto data
-- `av_crypto_daily` - Get daily crypto data
-- `av_crypto_weekly` - Get weekly crypto data
-- `av_crypto_monthly` - Get monthly crypto data
+### 🏛️ Economic Indicators
+| Tool | Description |
+|------|-------------|
+| `av_economic_real_gdp` | Real GDP data |
+| `av_economic_treasury_yield` | Treasury yield curves |
+| `av_economic_fed_funds_rate` | Federal funds rate |
+| `av_economic_cpi` | Consumer Price Index |
+| `av_economic_inflation` | Inflation rates |
+| `av_economic_unemployment_rate` | Unemployment rate |
 
-### Technical Analysis Tools
+### 🛢️ Commodities
+| Tool | Description |
+|------|-------------|
+| `av_commodities_crude_oil_wti` | WTI crude oil prices |
+| `av_commodities_crude_oil_brent` | Brent crude oil prices |
+| `av_commodities_natural_gas` | Natural gas prices |
+| `av_commodities_copper` | Copper prices |
+| `av_commodities_wheat` | Wheat prices |
+| `av_commodities_corn` | Corn prices |
 
-- `av_technical_sma` - Simple Moving Average
-- `av_technical_ema` - Exponential Moving Average
-- `av_technical_wma` - Weighted Moving Average
-- `av_technical_macd` - MACD indicator
-- `av_technical_stoch` - Stochastic Oscillator
-- `av_technical_rsi` - Relative Strength Index
-- `av_technical_bbands` - Bollinger Bands
+### 🔍 Market Intelligence
+| Tool | Description |
+|------|-------------|
+| `av_intelligence_news_sentiment` | News sentiment analysis |
+| `av_intelligence_top_gainers_losers` | Top gainers and losers |
+| `av_intelligence_insider_transactions` | Insider trading data |
+| `av_intelligence_earnings_call_transcript` | Earnings call transcripts |
 
-### Fundamental Analysis Tools
+### 🔧 Utilities
+| Tool | Description |
+|------|-------------|
+| `av_util_symbol_search` | Search for symbols |
+| `av_util_market_status` | Current market status |
 
-- `av_fundamental_company_overview` - Company overview and key metrics
-- `av_fundamental_income_statement` - Income statements
-- `av_fundamental_balance_sheet` - Balance sheets
-- `av_fundamental_cash_flow` - Cash flow statements
-- `av_fundamental_earnings` - Earnings data
-- `av_fundamental_listing_status` - Listing status of stocks
-- `av_fundamental_earnings_calendar` - Upcoming earnings
-- `av_fundamental_ipo_calendar` - Upcoming IPOs
-- `av_fundamental_dividend_calendar` - Upcoming dividends
-- `av_fundamental_splits_calendar` - Upcoming stock splits
-- `av_fundamental_etf_profile` - ETF profile information
-- `av_fundamental_etf_holdings` - ETF holdings
+## 💡 Usage Examples
 
-### Economic Data Tools
-
-- `av_economic_real_gdp` - Real GDP data
-- `av_economic_real_gdp_per_capita` - Real GDP per capita
-- `av_economic_treasury_yield` - Treasury yield curves
-- `av_economic_fed_funds_rate` - Federal funds rate
-- `av_economic_cpi` - Consumer Price Index
-- `av_economic_inflation` - Inflation rates
-- `av_economic_retail_sales` - Retail sales data
-- `av_economic_durable_goods` - Durable goods orders
-- `av_economic_unemployment_rate` - Unemployment rate
-- `av_economic_nonfarm_payroll` - Nonfarm payroll data
-
-### Commodities Tools
-
-- `av_commodities_crude_oil_wti` - WTI crude oil prices
-- `av_commodities_crude_oil_brent` - Brent crude oil prices
-- `av_commodities_natural_gas` - Natural gas prices
-- `av_commodities_copper` - Copper prices
-- `av_commodities_aluminum` - Aluminum prices
-- `av_commodities_wheat` - Wheat prices
-- `av_commodities_corn` - Corn prices
-- `av_commodities_cotton` - Cotton prices
-- `av_commodities_sugar` - Sugar prices
-- `av_commodities_coffee` - Coffee prices
-- `av_commodities_global_index` - Global commodities index
-
-### Market Intelligence Tools
-
-- `av_intelligence_news_sentiment` - News sentiment analysis
-- `av_intelligence_earnings_call_transcript` - Earnings call transcripts
-- `av_intelligence_top_gainers_losers` - Top gainers and losers
-- `av_intelligence_insider_transactions` - Insider trading data
-- `av_intelligence_analytics_fixed_window` - Analytics with fixed time window
-- `av_intelligence_analytics_sliding_window` - Analytics with sliding time window
-
-### Utility Tools
-
-- `av_util_symbol_search` - Search for symbols
-- `av_util_market_status` - Current market status
-
-## Example Usage
-
-### Get Apple stock quote
-
+### Stock Market Analysis
 ```json
 {
   "tool": "av_stocks_quote",
@@ -164,8 +161,7 @@ Add to your MCP client configuration:
 }
 ```
 
-### Get EUR/USD exchange rate
-
+### Currency Exchange
 ```json
 {
   "tool": "av_forex_exchange_rate",
@@ -176,8 +172,7 @@ Add to your MCP client configuration:
 }
 ```
 
-### Calculate RSI for Tesla
-
+### Technical Analysis
 ```json
 {
   "tool": "av_technical_rsi",
@@ -190,35 +185,76 @@ Add to your MCP client configuration:
 }
 ```
 
-## Development
+### Company Fundamentals
+```json
+{
+  "tool": "av_fundamental_company_overview",
+  "arguments": {
+    "symbol": "MSFT"
+  }
+}
+```
+
+### Economic Data
+```json
+{
+  "tool": "av_economic_cpi",
+  "arguments": {}
+}
+```
+
+## 🔧 Development
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Build the project
-npm run build
+pnpm build
 
 # Start the server
-npm start
+pnpm start
 
-# Development mode (build + start)
-npm run dev
+# Development mode
+pnpm dev
 ```
 
-## License
+## ⚡ Rate Limits & Performance
 
-MIT
+Alpha Vantage API limits vary by subscription tier:
 
-## API Rate Limits
+| Tier | Requests/Day | Requests/Minute |
+|------|--------------|-----------------|
+| **Free** | 25 | 5 |
+| **Premium** | 1,200+ | 75+ |
+| **Enterprise** | Unlimited | Custom |
 
-Alpha Vantage has rate limits depending on your subscription:
-- Free tier: 25 requests per day
-- Paid tiers: Various higher limits
+> 💡 **Tip**: The MCP server includes intelligent rate limiting and error handling to maximize your API quota efficiency.
 
-Please refer to [Alpha Vantage's documentation](https://www.alphavantage.co/support/#api-key) for current rate limits.
+## 📦 Requirements
 
-## Support
+- **Node.js**: 18.0+
+- **Alpha Vantage API Key**: [Get yours free](https://www.alphavantage.co/support/#api-key)
+- **MCP Client**: Claude Desktop, Continue, or any MCP-compatible application
 
-For issues with this MCP server, please open an issue on GitHub.
-For Alpha Vantage API support, please contact [Alpha Vantage support](https://www.alphavantage.co/support/).
+## 🤝 Contributing
+
+This package is part of a monorepo. Please refer to the [root README](../../README.md) for development guidelines and contribution instructions.
+
+## 📄 License
+
+MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## 🆘 Support
+
+- **MCP Server Issues**: [Open GitHub Issue](https://github.com/your-repo/issues)
+- **Alpha Vantage API**: [Contact Support](https://www.alphavantage.co/support/)
+- **MCP Protocol**: [Model Context Protocol Docs](https://modelcontextprotocol.io/)
+
+---
+
+<div align="center">
+
+**[Alpha Vantage API](https://www.alphavantage.co/) • [MCP Protocol](https://modelcontextprotocol.io/) • [Get API Key](https://www.alphavantage.co/support/#api-key)**
+
+</div>
